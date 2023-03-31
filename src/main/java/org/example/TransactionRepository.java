@@ -13,6 +13,6 @@ public class TransactionRepository {
   }
 
   public List<Transaction> allTransactions() {
-    return List.of(new Transaction());
+    return List.of(new Transaction(0));
   }
 }
