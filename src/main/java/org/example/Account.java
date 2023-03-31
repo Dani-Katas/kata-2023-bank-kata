@@ -1,20 +1,27 @@
 package org.example;
 
+import java.util.List;
+
 public class Account {
 
-  public Account(MyConsole console) {
+  private TransactionRepository transactionRepository;
 
+  private StatementPrinter statementPrinter;
+
+  public Account(MyConsole console) {
+    this.transactionRepository = new TransactionRepository();
   }
 
   public void deposit(int amount) {
-    throw new RuntimeException("Not implemented yet");
+    this.transactionRepository.deposit(amount);
   }
 
   public void withdraw(int amount) {
-    throw new RuntimeException("Not implemented yet");
+    this.transactionRepository.withdraw(amount);
   }
 
   public void printStatement() {
-    throw new RuntimeException("Not implemented yet");
+    List<Transaction> allTransactions = this.transactionRepository.allTransactions();
+    this.statementPrinter.print(allTransactions);
   }
 }
