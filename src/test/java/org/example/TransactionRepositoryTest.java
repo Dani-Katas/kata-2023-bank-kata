@@ -1,6 +1,7 @@
 package org.example;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
@@ -24,5 +25,14 @@ public class TransactionRepositoryTest {
     List<Transaction> transactions = transactionRepository.allTransactions();
 
     assertEquals(1, transactions.size());
+  }
+
+  @Test
+  public void shouldAddTransactionWithAmount() {
+    transactionRepository.deposit(1000);
+
+    List<Transaction> transactions = transactionRepository.allTransactions();
+
+    assertTrue(transactions.get(0).hasAmount(1000));
   }
 }
