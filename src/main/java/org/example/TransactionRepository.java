@@ -5,7 +5,7 @@ import java.util.List;
 public class TransactionRepository {
 
   public void deposit(int amount) {
-    throw new RuntimeException("Not implemented yet");
+    //TODO
   }
 
   public void withdraw(int amount) {
@@ -13,6 +13,6 @@ public class TransactionRepository {
   }
 
   public List<Transaction> allTransactions() {
-    throw new RuntimeException("Not implemented yet");
+    return List.of(new Transaction());
   }
 }
