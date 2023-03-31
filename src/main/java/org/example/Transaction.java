@@ -2,15 +2,13 @@ package org.example;
 
 public class Transaction {
 
-
   private final int amount;
 
-
-  public Transaction(int i) {
-    this.amount=i;
+  public Transaction(int amount) {
+    this.amount = amount;
   }
 
-  public boolean hasAmount(int i) {
-    return amount==i;
+  public boolean hasAmount(int amount) {
+    return this.amount == amount;
   }
 }

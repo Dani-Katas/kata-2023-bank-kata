@@ -8,13 +8,19 @@ class TransactionTest {
     @Test
     void returnFalseIfHasDifferentAmount() {
         Transaction transaction = new Transaction(0);
-        assertFalse(transaction.hasAmount(1));
+
+        final boolean hasAmount = transaction.hasAmount(1);
+
+        assertFalse(hasAmount);
     }
 
     @Test
     void returnTrueIfHasSameAmount() {
         Transaction transaction = new Transaction(1);
-        assertTrue(transaction.hasAmount(1));
+
+        final boolean hasAmount = transaction.hasAmount(1);
+
+        assertTrue(hasAmount);
     }
 
 }
